@@ -47,7 +47,7 @@ namespace CelticEgyptianRatscrewKata.Game
 
         public int NumberOfCards(IPlayer player)
         {
-            return _gameState.NumberOfCards(player.Name);
+            return _gameState.GetNumberOfCardsInPlayersDeck(player.Name);
         }
 
         /// <summary>

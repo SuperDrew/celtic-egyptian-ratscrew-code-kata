@@ -35,6 +35,6 @@ namespace CelticEgyptianRatscrewKata.Game
         /// </summary>
         void Clear();
 
-        int NumberOfCards(string name);
+        int GetNumberOfCardsInPlayersDeck(string name);
     }
 }

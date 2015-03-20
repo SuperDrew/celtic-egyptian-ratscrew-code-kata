@@ -81,7 +81,7 @@ namespace CelticEgyptianRatscrewKata.Game
             return _decks[playerId].Any();
         }
 
-        public int NumberOfCards(string playerId)
+        public int GetNumberOfCardsInPlayersDeck(string playerId)
         {
             if (!_decks.ContainsKey(playerId)) throw new ArgumentException("The selected player doesn't exist");
             return _decks[playerId].Count();
