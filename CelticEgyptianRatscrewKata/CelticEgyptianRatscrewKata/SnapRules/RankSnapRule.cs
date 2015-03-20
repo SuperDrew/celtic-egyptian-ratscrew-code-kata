@@ -11,7 +11,7 @@ namespace CelticEgyptianRatscrewKata.SnapRules
     {
         public bool IsSnapValid(IReadOnlyGameState gameState)
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }
