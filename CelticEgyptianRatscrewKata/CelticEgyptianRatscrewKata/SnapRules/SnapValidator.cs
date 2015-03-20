@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CelticEgyptianRatscrewKata.Game;
 
 namespace CelticEgyptianRatscrewKata.SnapRules
 {
@@ -21,9 +22,9 @@ namespace CelticEgyptianRatscrewKata.SnapRules
         /// <summary>
         /// Checks if <paramref name="cardStack"/> has any valid snaps.
         /// </summary>
-        public bool CanSnap(Cards cardStack)
+        public bool CanSnap(IReadOnlyGameState gameState)
         {
-            return _rules.Any(r => r.IsSnapValid(cardStack));
+            return _rules.Any(r => r.IsSnapValid(gameState.Stack));
         }
     }
 }

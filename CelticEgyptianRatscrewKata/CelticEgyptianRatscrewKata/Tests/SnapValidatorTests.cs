@@ -14,7 +14,7 @@ namespace CelticEgyptianRatscrewKata.Tests
             var snapValidator = new SnapValidator();
 
             //ACT
-            var result = snapValidator.CanSnap(Cards.Empty());
+            var result = snapValidator.CanSnap(new ReadOnlyGameState {Stack = Cards.Empty()});
 
             //ASSERT
             Assert.IsFalse(result);
@@ -29,7 +29,7 @@ namespace CelticEgyptianRatscrewKata.Tests
             var snapValidator = new SnapValidator(alwaysTrueRule);
 
             //ACT
-            var result = snapValidator.CanSnap(Cards.Empty());
+            var result = snapValidator.CanSnap(new ReadOnlyGameState {Stack = Cards.Empty()});
 
             //ASSERT
             Assert.IsTrue(result);
@@ -51,7 +51,7 @@ namespace CelticEgyptianRatscrewKata.Tests
             var snapValidator = new SnapValidator(alwaysTrueRule);
 
             //ACT
-            var result = snapValidator.CanSnap(cardStack);
+            var result = snapValidator.CanSnap(new ReadOnlyGameState {Stack = cardStack});
 
             //ASSERT
             Assert.IsTrue(result);

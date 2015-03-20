@@ -1,7 +1,9 @@
+using CelticEgyptianRatscrewKata.Game;
+
 namespace CelticEgyptianRatscrewKata.SnapRules
 {
     public interface ISnapValidator
     {
-        bool CanSnap(Cards stack);
+        bool CanSnap(IReadOnlyGameState gameState);
     }
 }

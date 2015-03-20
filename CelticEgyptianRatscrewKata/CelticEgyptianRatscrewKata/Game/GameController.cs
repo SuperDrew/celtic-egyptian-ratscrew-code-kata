@@ -97,7 +97,7 @@ namespace CelticEgyptianRatscrewKata.Game
             {
                 return ExecuteNoSnap();
             }
-            if (_snapValidator.CanSnap(_gameState.Stack))
+            if (_snapValidator.CanSnap(_gameState))
             {
                 return ExecuteValidSnap(player);
             }
