@@ -33,6 +33,18 @@ namespace CelticEgyptianRatscrewKata.Tests.SnapRules
             Assert.IsFalse(result);
         }
 
+        [Test]
+        public void SnapIsValidWhenRankMatchesCard()
+        {
+            //Arrange
+            Cards cards = new Cards(new List<Card> {new Card(Suit.Hearts, Rank.Six)});
+            IReadOnlyGameState gameState = new ReadOnlyGameState() {Stack = cards, CurrentRank = Rank.Six};
 
+            //Act
+            var result = _rankSnapRule.IsSnapValid(gameState);
+
+            //Assert
+            Assert.IsTrue(result);
+        }
     }
 }
