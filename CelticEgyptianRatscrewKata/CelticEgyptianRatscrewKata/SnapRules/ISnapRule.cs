@@ -1,4 +1,6 @@
-﻿namespace CelticEgyptianRatscrewKata.SnapRules
+﻿using CelticEgyptianRatscrewKata.Game;
+
+namespace CelticEgyptianRatscrewKata.SnapRules
 {
     /// <summary>
     /// Represents a rule for a snap on a stack.
@@ -6,8 +8,8 @@
     public interface ISnapRule
     {
         /// <summary>
-        /// Checks whether a snap is valid on the <paramref name="cardStack"/>.
+        /// Checks whether a snap is valid on the <paramref name="gameState"/>.
         /// </summary>
-        bool IsSnapValid(Cards cardStack);
+        bool IsSnapValid(IReadOnlyGameState gameState);
     }
 }

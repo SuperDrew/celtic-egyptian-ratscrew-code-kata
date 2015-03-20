@@ -1,4 +1,5 @@
-﻿using CelticEgyptianRatscrewKata.SnapRules;
+﻿using CelticEgyptianRatscrewKata.Game;
+using CelticEgyptianRatscrewKata.SnapRules;
 using NSubstitute;
 using NUnit.Framework;
 
@@ -25,7 +26,7 @@ namespace CelticEgyptianRatscrewKata.Tests
         {
             //ARRANGE
             var alwaysTrueRule = Substitute.For<ISnapRule>();
-            alwaysTrueRule.IsSnapValid(Arg.Any<Cards>()).Returns(true);
+            alwaysTrueRule.IsSnapValid(Arg.Any<IReadOnlyGameState>()).Returns(true);
             var snapValidator = new SnapValidator(alwaysTrueRule);
 
             //ACT
@@ -45,13 +46,14 @@ namespace CelticEgyptianRatscrewKata.Tests
             });
 
             var alwaysTrueRule = Substitute.For<ISnapRule>();
-            alwaysTrueRule.IsSnapValid(Arg.Any<Cards>()).Returns(false);
-            alwaysTrueRule.IsSnapValid(cardStack).Returns(true);
+            alwaysTrueRule.IsSnapValid(Arg.Any<IReadOnlyGameState>()).Returns(false);
+            var gameState = new ReadOnlyGameState {Stack = cardStack};
+            alwaysTrueRule.IsSnapValid(gameState).Returns(true);
 
             var snapValidator = new SnapValidator(alwaysTrueRule);
 
             //ACT
-            var result = snapValidator.CanSnap(new ReadOnlyGameState {Stack = cardStack});
+            var result = snapValidator.CanSnap(gameState);
 
             //ASSERT
             Assert.IsTrue(result);

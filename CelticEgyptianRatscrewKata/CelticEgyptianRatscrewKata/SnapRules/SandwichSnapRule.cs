@@ -1,4 +1,6 @@
-﻿namespace CelticEgyptianRatscrewKata.SnapRules
+﻿using CelticEgyptianRatscrewKata.Game;
+
+namespace CelticEgyptianRatscrewKata.SnapRules
 {
     /// <summary>
     /// Rule representing a sandwich somewhere in the stack.
@@ -6,11 +8,11 @@
     /// </summary>
     public class SandwichSnapRule : ISnapRule
     {
-        public bool IsSnapValid(Cards cardStack)
+        public bool IsSnapValid(IReadOnlyGameState gameState)
         {
             Rank? previous = null;
             Rank? previousPrevious = null;
-            foreach (var card in cardStack)
+            foreach (var card in gameState.Stack)
             {
                 if (card.Rank == previousPrevious)
                 {

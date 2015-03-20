@@ -1,14 +1,16 @@
-﻿namespace CelticEgyptianRatscrewKata.SnapRules
+﻿using CelticEgyptianRatscrewKata.Game;
+
+namespace CelticEgyptianRatscrewKata.SnapRules
 {
     /// <summary>
     /// Represents a standard snap, i.e. any two adjacent cards have the same rank.
     /// </summary>
     public class StandardSnapRule : ISnapRule
     {
-        public bool IsSnapValid(Cards cardStack)
+        public bool IsSnapValid(IReadOnlyGameState gameState)
         {
             Rank? previous = null;
-            foreach (var card in cardStack)
+            foreach (var card in gameState.Stack)
             {
                 if (card.Rank == previous)
                 {

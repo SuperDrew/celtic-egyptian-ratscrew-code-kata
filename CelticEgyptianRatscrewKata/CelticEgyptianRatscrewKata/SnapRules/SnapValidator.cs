@@ -20,11 +20,11 @@ namespace CelticEgyptianRatscrewKata.SnapRules
         }
 
         /// <summary>
-        /// Checks if <paramref name="cardStack"/> has any valid snaps.
+        /// Checks if <paramref name="gameState"/> has any valid snaps.
         /// </summary>
         public bool CanSnap(IReadOnlyGameState gameState)
         {
-            return _rules.Any(r => r.IsSnapValid(gameState.Stack));
+            return _rules.Any(r => r.IsSnapValid(gameState));
         }
     }
 }
