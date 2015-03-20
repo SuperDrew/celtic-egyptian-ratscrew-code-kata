@@ -73,6 +73,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rank.cs" />
     <Compile Include="SnapRules\ISnapRule.cs" />
+    <Compile Include="SnapRules\RankSnapRule.cs" />
     <Compile Include="SnapRules\SandwichSnapRule.cs" />
     <Compile Include="SnapRules\ISnapValidator.cs" />
     <Compile Include="SnapRules\SnapValidator.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Tests\PlayerSequenceTests.cs" />
     <Compile Include="Tests\ReadOnlyGameState.cs" />
     <Compile Include="Tests\SnapRules\DarkQueenRuleTests.cs" />
+    <Compile Include="Tests\SnapRules\RankSnapRuleTests.cs" />
     <Compile Include="Tests\SnapRules\SandwichSnapRuleTests.cs" />
     <Compile Include="Tests\SnapRules\StandardSnapRuleTests.cs" />
     <Compile Include="Tests\DealerTests.cs" />
