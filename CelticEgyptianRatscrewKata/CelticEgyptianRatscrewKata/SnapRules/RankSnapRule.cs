@@ -11,6 +11,13 @@ namespace CelticEgyptianRatscrewKata.SnapRules
     {
         public bool IsSnapValid(IReadOnlyGameState gameState)
         {
+            if (gameState.Stack.HasCards)
+            {
+                if (gameState.CurrentRank == gameState.Stack.First().Rank)
+                {
+                    return true;
+                }
+            }
             return false;
         }
     }
