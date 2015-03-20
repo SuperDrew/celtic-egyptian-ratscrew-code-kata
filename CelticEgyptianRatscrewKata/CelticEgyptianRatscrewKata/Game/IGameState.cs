@@ -2,18 +2,8 @@
 
 namespace CelticEgyptianRatscrewKata.Game
 {
-    public interface IGameState
+    public interface IGameState : IReadOnlyGameState
     {
-        /// <summary>
-        /// Gets a copy of the current stack of cards.
-        /// </summary>
-        Cards Stack { get; }
-
-        /// <summary>
-        /// Gets the last rank called.
-        /// </summary>
-        Rank CurrentRank { get; }
-
         /// <summary>
         /// Advance the current rank, looping back to Ace after King.
         /// </summary>
