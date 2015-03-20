@@ -11,6 +11,7 @@ namespace CelticEgyptianRatscrewKata.Game
     {
         private readonly Cards _stack;
         private readonly IDictionary<string, Cards> _decks;
+        private Rank _currentRank = Rank.Ace;
 
         /// <summary>
         /// Default constructor.
@@ -28,6 +29,16 @@ namespace CelticEgyptianRatscrewKata.Game
         }
 
         public Cards Stack { get {return new Cards(_stack);} }
+
+        public Rank CurrentRank
+        {
+            get { return _currentRank; }
+        }
+
+        public void AdvanceCurrentRank()
+        {
+            _currentRank = (Rank) (((int) _currentRank + 1)%13);
+        }
 
         /// <summary>
         /// Add the given player to the game with the given deck.

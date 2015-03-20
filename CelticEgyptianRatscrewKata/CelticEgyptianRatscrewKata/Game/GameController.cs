@@ -144,6 +144,7 @@ namespace CelticEgyptianRatscrewKata.Game
         private Card ExecutePlayCard(IPlayer player)
         {
             _playerSequence.AdvanceToNextPlayer();
+            _gameState.AdvanceCurrentRank();
             return _gameState.PlayCard(player.Name);
         }
 

@@ -10,6 +10,16 @@ namespace CelticEgyptianRatscrewKata.Game
         Cards Stack { get; }
 
         /// <summary>
+        /// Gets the last rank called.
+        /// </summary>
+        Rank CurrentRank { get; }
+
+        /// <summary>
+        /// Advance the current rank, looping back to Ace after King.
+        /// </summary>
+        void AdvanceCurrentRank();
+
+        /// <summary>
         /// Add the given player to the game with the given deck.
         /// </summary>
         /// <exception cref="ArgumentException">If the given player already exists</exception>
